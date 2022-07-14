@@ -9,14 +9,18 @@ function showBilling(total){
     console.log(`VALOR A PAGAR: R$ ${total.toFixed(2)}`);
 }
 
-function main(){
-    const total = lines.reduce((tot, line) => {
+function getTotalAmount(lines){
+    return lines.reduce((tot, line) => {
         const item = line.split(' ');
-        const quantity = item[1];
-        const price = parseFloat(item[2]);
+        const quantity = item[1]? item[1] : 0;
+        const price = item[2]? parseFloat(item[2]) : 0;
         
         return tot + (quantity * price);
     }, 0);
+}
+
+function main(){
+    const total = getTotalAmount(lines);
     
     showBilling(total);
 }
