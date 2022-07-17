@@ -1,3 +1,4 @@
+// Area
 
 function showShapeArea(figureName, area){
     console.log(`${figureName}: ${area.toFixed(3)}`);
@@ -25,10 +26,10 @@ function calculateAreas(a, b, c){
 }
 
 function main(){
-    // const input = require('fs').readFileSync('/dev/stdin', 'utf8');
-    // const lines = input.split(' ');
+    const input = require('fs').readFileSync('/dev/stdin', 'utf8');
+    const lines = input.split(' ');
 
-    const lines = ['3.0', '4.0', '5.2'];
+    // const lines = ['3.0', '4.0', '5.2'];
 
     const a = parseFloat(lines.shift());
     const b = parseFloat(lines.shift());
